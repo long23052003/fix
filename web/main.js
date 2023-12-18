@@ -1,3 +1,6 @@
+// khi đăng xuất thì hủy bỏ item activeuser
+localStorage.removeItem("activeUser");
+
 // validation form login
 const inputUsername = document.querySelector(".input-login-username");
 const inputPassword = document.querySelector(".input-login-password");
@@ -25,6 +28,7 @@ btnLogin.addEventListener("click", (e) => {
           if (storedUser.username === "admin") {
             alert("Chào mừng admin!");
             window.location.href = "../duyetcauhoi/duyet.html";
+            
           } else {
             alert("Chào mừng bạn đến với website");
             window.location.href = "../guicauhoi/gui.html";
