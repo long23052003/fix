@@ -18,7 +18,6 @@ btnLogin.addEventListener("click", (e) => {
       if (storedUser) {
         // Kiểm tra xem tên người dùng và mật khẩu nhập vào có khớp với thông tin đã lưu hay không
         if (
-          (storedUser.username === "admin" && storedUser.password === "12345678") ||
           (storedUser.username === inputUsername.value &&
             storedUser.password === inputPassword.value)
         ) {

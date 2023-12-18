@@ -100,6 +100,7 @@ const submitQuestion = document.querySelector(".submitQuestion");
             var index = document.getElementById("index").value;
             var realTime = updateTime();
             listQuestions[index] = {
+                ...listQuestions[index],
                 time: realTime,
                 question: document.getElementById("question").value,
                 keyA: document.getElementById("keyA").value,
@@ -115,6 +116,6 @@ const submitQuestion = document.querySelector(".submitQuestion");
             document.getElementById("update").style.display = "none";
             resetInput();
         })
-
-
-
+function submitForm(event){
+    event.preventDefault();
+}
