@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="js.css">
+</head>
+
+<body onload="renderQuestion()">
+    <div class="menu">
+        <ul>
+            <li><a href="gui.html">Trang chủ</a></li>
+            <li><a href="add.html">Bộ câu hỏi</a></li>
+            <li><a href="..//contract/contractUser.html">Liên hệ</a></li>
+        </ul>
+    </div>
+    <h1>Tạo Câu Hỏi</h1>
+    <form class="inputQuestion">
+        <label for="question">Nhập câu hỏi:</label>
+        <input type="text" id="question"><br>
+        <label for="key">Nhập đáp án:</label>
+        <input type="text" placeholder="A" id="keyA"><br>
+        <input type="text" placeholder="B" id="keyB"><br>
+        <input type="text" placeholder="C" id="keyC"><br>
+        <input type="text" placeholder="D" id="keyD"><br>
+        <label for="trueKey">Đáp án đúng:</label>
+        <select name="trueKey" id="trueKey">
+            <option hidden value="">-Chọn đáp án-</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+        <br>
+        <input type="hidden" id="index">
+        <button type="submit" class="submitQuestion">Gửi</button>
+        <button style="display: none;" id="update">Cập nhật</button>
+        <table id="tableContent">
+        </table=>
+    </form>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>

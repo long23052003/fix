@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+}
+header{
+    /* canh giữa cách lề mỗi bên 10% */
+    margin: 5px 10%;
+}
+.menu{
+    background: #484848; /*tô màu cho menu cha*/
+    border-radius: 5px; /* bo góc */
+}
+.menu ul{
+    display: flex;
+}
+.menu> ul li{
+    list-style: none; /* bỏ dấu chấm mặc định của li */
+    /* kẻ đường bên phải của li */
+    border-right: 1px solid #ccc;
+}
+.menu> ul li a{
+    display: block;
+    padding: 0 25px;
+    line-height: 50px;
+    color: #f1f2f3;
+    text-decoration: none;
+}
+/* Khi hover đến li, tô màu cho thẻ a */
+.menu ul li:hover>a{
+    background: aqua;
+    opacity: 1;
+    color: black;
+}
+h1{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 36px;
+}
+button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px 15px 3px 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 0 3px #999;
+}
+button:hover{
+    background-color: #00FFFF;
+}
+button:active{
+    box-shadow: 0 3px #666;
+    transform: translateY(3px);
+    background-color: #00FFFF;
+    transition: 0.1s;
+}
+table{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    text-align: center;
+    border-spacing: initial;
+    border-collapse: collapse;
+    width: 90%;
+}
+th{
+    background-color: #00FFFF;
+    border: 1px solid gray;
+    border-bottom: 2px solid black;
+    padding: 10px 5px 10px 5px;
+}
+td{
+    border: 1px solid gray;
+    height: auto;
+    padding: 0px 5px 0px 5px;
+    word-wrap: break-word;
+}
+td:nth-child(1) {
+    width: 0px;
+}
+td:nth-child(2){
+    width: 90px;
+}
+td:nth-child(3){
+    min-width: 200px;
+    max-width: 200px;
+    text-align: left;
+}
+td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7){
+    text-align: left;
+    min-width: 150px;
+    max-width: 150px;
+
+}
+td:nth-child(8){
+    width: 60px;
+}
+td:nth-child(9){
+    width: 90px;
+}
+td:nth-child(10){
+    width: 70px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="check.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="duyet.html">Trang chủ</a></li>
+            <li><a href="add.html">Bộ câu hỏi</a></li>
+            <li><a href="..//contract/contractAdmin.html">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <h1>Duyệt Câu Hỏi</h1>
+    <table id="questionList"></table>
+</body>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        displayQuestionList();
+    });
+
+    function displayQuestionList() {
+        var questionList = JSON.parse(localStorage.getItem("list-question"));
+        var questionListDiv = document.getElementById("questionList");
+        let html = `
+        <tr>
+            <th>STT</th>
+            <th>Thời gian gửi</th>
+            <th>Câu hỏi</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>Đáp án đúng</th>
+            <th>Người gửi</th>
+            <th>Trạng thái</th>
+        </tr>`;
+        var count = 0;
+        for (let i = 0; i < questionList.length; ++i) {
+            const question = questionList[i];
+            if (question.status !== "Chờ duyệt") {
+                continue;
+            }
+            html += "<tr><td>" + (count + 1) + 
+                "</td><td>" + question.time +
+                "</td><td>" + question.question +
+                "</td><td>" + question.keyA +
+                "</td><td>" + question.keyB +
+                "</td><td>" + question.keyC +
+                "</td><td>" + question.keyD +
+                "</td><td>" + question.trueKey +
+                "</td><td>" + question.username +
+                "</td><td><button onclick=\"approveQuestion(" + i + ")\">Duyệt</button> " +
+                "<button onclick=\"rejectQuestion(" + i + ")\">Không Duyệt</button></td></tr>";
+            ++count;
+        }
+        questionListDiv.innerHTML = html;
+    }
+
+    function approveQuestion(index) {
+        var questionList = JSON.parse(localStorage.getItem("list-question")) || [];
+
+        // Cập nhật trạng thái câu hỏi thành "Đã Duyệt"
+        questionList[index].status = "Đã Duyệt";
+
+        // Lưu danh sách câu hỏi đã cập nhật vào local storage
+        localStorage.setItem("list-question", JSON.stringify(questionList));
+        displayQuestionList();
+
+    }
+
+    function rejectQuestion(index) {
+        var questionList = JSON.parse(localStorage.getItem("list-question")) || [];
+
+        // Cập nhật trạng thái câu hỏi thành "Không Duyệt"
+        questionList[index].status = "Không Duyệt";
+
+        // Lưu danh sách câu hỏi đã cập nhật vào local storage
+        localStorage.setItem("list-question", JSON.stringify(questionList));
+        displayQuestionList();
+    }
+
+</script>
+</html>

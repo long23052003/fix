@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+}
+header{
+    /* canh giữa cách lề mỗi bên 10% */
+    margin: 5px 10%;
+}
+
+.menu{
+    background: #484848; /*tô màu cho menu cha*/
+    border-radius: 5px; /* bo góc */
+}
+.menu ul{
+    display: flex;
+}
+.menu> ul li{
+    list-style: none; /* bỏ dấu chấm mặc định của li */
+    /* kẻ đường bên trái và bên phải của li */
+    border-right: 1px solid #ccc;
+    /* border-left:1px solid #333; */
+}
+.menu> ul li a{
+    display: block;
+    padding: 0 25px;
+    line-height: 50px;
+    color: #f1f2f3;
+    text-decoration: none;
+}
+/* Khi hover đến li, tô màu cho thẻ a */
+.menu ul li:hover>a{
+    background: aqua;
+    opacity: 1;
+    color: black;
+}
+/*menu con*/
+/*Ẩn các menu con cấp 1,2,3*/
+.menu li ul{
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+.menu li>ul li{
+
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: #999;
+    text-align: left;
+}
+.menu li>ul li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.menu li>ul li:last-child a{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*khi hover thì hiện menu con*/
+.menu  li:hover > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#a1{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    border-radius:50%;
+    margin-top: 20px;
+
+}
+#p1{
+    position: absolute;
+    margin-left: 70px;
+    font-size: 30px;
+    margin-top: -50PX;    
+}  
+
+
+.d3{
+    position: absolute;
+    display: flex;
+    width: 550px;
+    height: 300px;
+    font-size: 20px;
+    margin-top: 95px;
+    margin-left: 15%;
+    border-radius:5%;
+    border: 3px solid rgb(58, 109, 227);
+}
+
+
+.d3 #a2{
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+    margin-left: 20px;
+}
+.d3 #d3-1{
+    margin-top: 65px;
+    margin-left: 45px;
+   
+}
+.d3 #d3-2{
+    margin-left: 70px;
+    margin-top: 100px; 
+    font-size: 18px;
+}
+p{
+    text-align: center;
+    margin-left: 20px;
+}
+
+.d4{
+    position: relative;
+    display: flex;
+    width: 550px;
+    height: 300px;
+    font-size: 20px;
+    margin-top: 95px;
+    margin-left: 55%;
+    border-radius:5%;
+    border: 3px solid rgb(58, 109, 227);
+}
+.d4 #a2{
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+    margin-left: 20px;
+}
+.d4 #d4-1{
+    margin-top: 65px;
+    margin-left: 45px;
+   
+}
+.d4 #d4-2{
+    margin-left: 70px;
+    margin-top: 40px;
+    margin-top: 100px;
+    font-size: 18px;
+}
+.d3 :hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+} 
+.d4 :hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+} 

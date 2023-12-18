@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+}
+header{
+    /* canh giữa cách lề mỗi bên 10% */
+    margin: 5px 10%;
+}
+.menu{
+    background: #484848; /*tô màu cho menu cha*/
+    border-radius: 5px; /* bo góc */
+}
+.menu ul{
+    display: flex;
+}
+.menu> ul li{
+    list-style: none; /* bỏ dấu chấm mặc định của li */
+    /* kẻ đường bên phải của li */
+    border-right: 1px solid #ccc;
+}
+.menu> ul li a{
+    display: block;
+    padding: 0 25px;
+    line-height: 50px;
+    color: #f1f2f3;
+    text-decoration: none;
+}
+/* Khi hover đến li, tô màu cho thẻ a */
+.menu ul li:hover>a{
+    background: aqua;
+    opacity: 1;
+    color: black;
+}
+h1{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 36px;
+}
+.danh_sach{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* danh sách */
+.danh_sach ul li{
+    list-style: none;
+    height: 25px;
+    font-size: 20px;
+    margin-right: 30px;
+    border-bottom: 3px solid white;
+}
+
+.danh_sach ul li:hover{
+    cursor: pointer;
+    color: #0054a6;
+    border-bottom: 3px solid#0054a6;
+}
+
+.danh_sach ul li a:hover{
+    color: #0054a6;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* khung của 3 trang thi */
+.bodybox{
+    min-height: 700px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quiz{
+    display: block;
+    margin: 0px 40px;
+    border-radius: 30px;
+    height: 400px;
+    width: 300px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.25s;
+}
+.quiz:hover{
+    box-shadow: 0 0 20px #eee;
+    transform: scale(1,1);
+}
+.quiz:hover .luyen{
+    cursor: pointer;    
+    display: flex;
+}
+.qhtml{
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/HTML5_logo_resized.svg/1200px-HTML5_logo_resized.svg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.qcss{
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.qjs{
+    background: url("https://i0.wp.com/theicom.org/wp-content/uploads/2016/03/js-logo.png?fit=500%2C500&ssl=1&w=640");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.luyen{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.25s;
+}
+.luyen:hover{
+    transform: scale(0.85,0.85);
+}
+.luyenhtml{
+    color: orangered;
+}
+.luyencss{
+    color: blue;
+}
+.luyenjs{
+    color: yellow;
+}
+
